@@ -1,13 +1,15 @@
 import React from "react";
+import { Styled } from "theme-ui";
+import { Card, Image } from "@theme-ui/components";
 
-const Card = ({ id, name, email }) => {
+const CardComponent = ({ username, name, email }) => {
   return (
-    <div className="bg-light-blue dib br3 pa3 ma2 grow fl w-25 tc">
-      <img src={`https://robohash.org/${id}?size=200x200`} alt="robot" />
-      <h2>{name}</h2>
-      <p>{email}</p>
-    </div>
+    <Card>
+      <Image src={`https://robohash.org/${username}?size=200x200`} />
+      <Styled.h2>{name}</Styled.h2>
+      <Styled.p>{email}</Styled.p>
+    </Card>
   );
 };
 
-export default Card;
+export default CardComponent;
