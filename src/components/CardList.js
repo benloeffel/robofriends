@@ -7,7 +7,7 @@ import Card from "../components/Card";
 const CardList = ({ robots }) => {
   return (
     <>
-      {robots.length ? (
+      {robots.length > 0 && robots[0] !== "" ? (
         <Grid
           gap={3}
           columns={[2, null, 5]}
@@ -28,7 +28,9 @@ const CardList = ({ robots }) => {
         </Grid>
       ) : (
         <Box sx={{ bg: "secondary", padding: "16px", textAlign: "center" }}>
-          <Styled.p>Sorry, we couldn't find your Robot!</Styled.p>
+          <Styled.p>
+            Sorry, we couldn't find any Robots matching your search!
+          </Styled.p>
         </Box>
       )}
     </>
