@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "theme-ui";
 import theme from "../utils/theme";
 import { robots } from "../robots";
-
 import Header from "../components/Header";
 import CardList from "../components/CardList";
 
