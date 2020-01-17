@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { ThemeProvider, Styled } from "theme-ui";
+import { ThemeProvider } from "theme-ui";
 import theme from "../utils/theme";
 import { robots } from "../robots";
-
-import { Grid } from "@theme-ui/components";
-
 import Header from "../components/Header";
-import Card from "../components/Card";
-import SearchInput from "../components/SearchInput";
+import CardList from "../components/CardList";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState(searchTerm);
+  const [searchResults, setSearchResults] = useState([searchTerm]);
 
-  const handleChange = e => {
+  const onSearchChange = e => {
     setSearchTerm(e.target.value);
   };
 
@@ -27,24 +23,12 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      <SearchInput searchTerm={searchTerm} searchChange={handleChange} />
-      <Styled.p>{searchResults.length} Robots found.</Styled.p>
-
-      {searchResults.length ? (
-        <Grid gap={2} columns={[2, null, 5]}>
-          {searchResults.map(robot => (
-            <Card
-              key={robot.id}
-              username={robot.username}
-              name={robot.name}
-              email={robot.email}
-            />
-          ))}
-        </Grid>
-      ) : (
-        <Styled.p>Sorry, we couldn't find your Robot!</Styled.p>
-      )}
+      <Header
+        searchTerms={searchTerm}
+        searchChange={onSearchChange}
+        resultLength={searchResults.length}
+      />
+      <CardList robots={searchResults} />
     </ThemeProvider>
   );
 }

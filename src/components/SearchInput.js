@@ -6,7 +6,7 @@ import { Input } from "@theme-ui/components";
 const SearchInput = ({ searchTerm, searchChange }) => {
   return (
     <Input
-      sx={{ mb: 3 }}
+      sx={{ mb: 3, maxWidth: 250, color: "text" }}
       placeholder="Enter Robot Name"
       value={searchTerm}
       onChange={searchChange}
