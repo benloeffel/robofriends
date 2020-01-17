@@ -15,28 +15,38 @@ export default {
     body: 1.5,
     heading: 1.125
   },
+  initialColorMode: "light",
   colors: {
-    text: "#5f6c7b", // Paragraph
-    background: "#fffffe", // Background
-    primary: "#3da9fc", // Primary (Button/Highlight)
-    secondary: "#90b4ce", // Secondary
-    muted: "#094067", // Headline & Stroke
-    accent: "#ef4565" // Tertiary
+    text: "#2C393B",
+    background: "#EDF2ED",
+    primary: "#EC5B31",
+    secondary: "#f25f4c",
+    accent: "887C7C",
+    modes: {
+      dark: {
+        background: "#0f0e17",
+        text: "#fffffe",
+        primary: "#EC5B31",
+        secondary: "#f25f4c",
+        accent: "#a7a9be"
+      }
+    }
   },
   buttons: {
     primary: {
       bg: "primary",
-      color: "background",
+      color: "text",
       fontWeight: "bold",
       transition: "all 0.25s",
       "&:hover": {
-        bg: "accent",
+        bg: "secondary",
+        color: "text",
         transition: "all 0.25s"
       }
     },
     secondary: {
       bg: "secondary",
-      color: "background",
+      color: "text",
       fontWeight: "bold",
       transition: "all 0.25s",
       "&:hover": {
@@ -60,42 +70,42 @@ export default {
       fontWeight: "body"
     },
     h1: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 5
     },
     h2: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 4
     },
     h3: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 3
     },
     h4: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 2
     },
     h5: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
       fontSize: 1
     },
     h6: {
-      color: "muted",
+      color: "primary",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
