@@ -1,15 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Styled } from "theme-ui";
-import { Grid } from "@theme-ui/components";
+import { Grid, Box } from "@theme-ui/components";
 import Card from "../components/Card";
 
 const CardList = ({ robots }) => {
   return (
     <>
-      {console.log(robots)}
       {robots.length ? (
-        <Grid gap={2} columns={[2, null, 5]}>
+        <Grid
+          gap={3}
+          columns={[2, null, 5]}
+          sx={{
+            bg: "text",
+            padding: 16
+          }}
+        >
           {robots.map((robot, idx) => (
             <Card
               key={idx}
@@ -21,7 +27,9 @@ const CardList = ({ robots }) => {
           ))}
         </Grid>
       ) : (
-        <Styled.p>Sorry, we couldn't find your Robot!</Styled.p>
+        <Box sx={{ bg: "secondary", padding: "16px", textAlign: "center" }}>
+          <Styled.p>Sorry, we couldn't find your Robot!</Styled.p>
+        </Box>
       )}
     </>
   );
