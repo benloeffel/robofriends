@@ -5,7 +5,7 @@ import { jsx } from "theme-ui";
 import SearchInput from "./SearchInput";
 import { Button } from "@theme-ui/components";
 
-const Header = ({ searchTerms, searchChange, resultLength }) => {
+const Header = ({ searchTerms, searchChange }) => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
@@ -21,7 +21,6 @@ const Header = ({ searchTerms, searchChange, resultLength }) => {
       <Styled.h1>RoboFriends</Styled.h1>
       <Styled.p>Search and instantly find your Robot Friends!</Styled.p>
       <SearchInput searchTerm={searchTerms} searchChange={searchChange} />
-      <Styled.p>{resultLength} Robots found.</Styled.p>
       <Button
         sx={{ position: "absolute", right: "16px" }}
         onClick={e => {
@@ -36,8 +35,7 @@ const Header = ({ searchTerms, searchChange, resultLength }) => {
 
 Header.propTypes = {
   searchTerms: PropTypes.string.isRequired,
-  searchChange: PropTypes.func.isRequired,
-  resultLength: PropTypes.number.isRequired
+  searchChange: PropTypes.func.isRequired
 };
 
 export default Header;
