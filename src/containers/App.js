@@ -4,6 +4,7 @@ import theme from "../utils/theme";
 import Header from "../components/Header";
 import CardList from "../components/CardList";
 import StatusBar from "../components/StatusBar";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,17 +41,19 @@ function App() {
   }, [searchTerm]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Header searchTerms={searchTerm} searchChange={onSearchChange} />
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        <Header searchTerms={searchTerm} searchChange={onSearchChange} />
 
-      <StatusBar
-        loading={loading}
-        error={error}
-        resultLength={searchResults.length}
-      />
+        <StatusBar
+          loading={loading}
+          error={error}
+          resultLength={searchResults.length}
+        />
 
-      {searchResults.length > 0 ? <CardList robots={searchResults} /> : null}
-    </ThemeProvider>
+        {searchResults.length > 0 ? <CardList robots={searchResults} /> : null}
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
