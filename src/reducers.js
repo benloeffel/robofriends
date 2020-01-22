@@ -29,7 +29,7 @@ const initialStateUsers = {
 export const requestUsers = (state = initialStateUsers, action = {}) => {
   switch (action.type) {
     case REQUEST_USERS_PENDING:
-      return Object.assign({}, state, { isPending: true });
+      return Object.assign({}, state, { isLoading: true });
     case REQUEST_USERS_SUCCESS:
       return Object.assign({}, state, {
         users: action.payload,
