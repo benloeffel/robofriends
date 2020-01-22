@@ -23,7 +23,7 @@ export const searchUsers = (state = initialStateSearch, action = {}) => {
 const initialStateUsers = {
   isLoading: false,
   users: [],
-  error: ""
+  error: {}
 };
 
 export const requestUsers = (state = initialStateUsers, action = {}) => {
