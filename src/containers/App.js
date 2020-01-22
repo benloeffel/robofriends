@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+
+import { connect } from "react-redux";
+import { setSearchTerm } from "../actions";
+
 import { ThemeProvider } from "theme-ui";
 import theme from "../utils/theme";
 import Header from "../components/Header";
@@ -6,15 +10,22 @@ import CardList from "../components/CardList";
 import StatusBar from "../components/StatusBar";
 import ErrorBoundary from "../components/ErrorBoundary";
 
-function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+const mapStateToProps = state => {
+  return {
+    searchTerm: state.searchTerm
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSearchChange: event => dispatch(setSearchTerm(event.target.value))
+  };
+};
+
+function App({ searchTerm, onSearchChange }) {
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const onSearchChange = e => {
-    setSearchTerm(e.target.value);
-  };
 
   useEffect(() => {
     async function getUsers() {
@@ -57,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
