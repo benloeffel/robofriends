@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { memo } from "react";
+import React, { memo } from "react"; // eslint-disable-line no-unused-vars
 import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
 import PropTypes from "prop-types";

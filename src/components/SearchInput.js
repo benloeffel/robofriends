@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
 /** @jsx jsx */
+import React from "react"; // eslint-disable-line no-unused-vars
 import { jsx } from "theme-ui";
 import { Label, Input } from "@theme-ui/components";
+import PropTypes from "prop-types";
 
 const SearchInput = ({ searchTerm, searchChange }) => {
   return (
