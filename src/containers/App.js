@@ -5,6 +5,7 @@ import { setSearchTerm, requestUsers } from "../actions";
 
 import { ThemeProvider } from "theme-ui";
 import theme from "../utils/theme";
+import Head from "../components/Head";
 import Header from "../components/Header";
 import CardList from "../components/CardList";
 import StatusBar from "../components/StatusBar";
@@ -45,6 +46,7 @@ function App({
   return (
     <ErrorBoundary>
       <ThemeProvider theme={theme}>
+        <Head />
         <Header searchTerms={searchTerm} searchChange={onSearchChange} />
         <StatusBar
           loading={isLoading}
