@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Grid } from "@theme-ui/components";
 import Card from "../components/Card";
 
-const CardList = ({ robots }) => {
+const CardList = ({ users }) => {
   return (
     <>
       <Grid
@@ -14,13 +14,13 @@ const CardList = ({ robots }) => {
           padding: 16
         }}
       >
-        {robots.map((robot, idx) => (
+        {users.map((user, idx) => (
           <Card
             key={idx}
-            id={robot.id}
-            username={robot.username}
-            name={robot.name}
-            email={robot.email}
+            id={user.id}
+            username={user.username}
+            name={user.name}
+            email={user.email}
           />
         ))}
       </Grid>
@@ -29,7 +29,7 @@ const CardList = ({ robots }) => {
 };
 
 CardList.propTypes = {
-  robots: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired
 };
 
 export default CardList;

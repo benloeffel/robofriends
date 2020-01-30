@@ -1,16 +1,21 @@
-import PropTypes from "prop-types";
 /** @jsx jsx */
+import React from "react"; // eslint-disable-line no-unused-vars
 import { jsx } from "theme-ui";
-import { Input } from "@theme-ui/components";
+import { Label, Input } from "@theme-ui/components";
+import PropTypes from "prop-types";
 
 const SearchInput = ({ searchTerm, searchChange }) => {
   return (
-    <Input
-      sx={{ mb: 3, maxWidth: 250, color: "text" }}
-      placeholder="Enter Robot Name"
-      value={searchTerm}
-      onChange={searchChange}
-    />
+    <div>
+      <Label htmlFor="search">Search Robots</Label>
+      <Input
+        id="search"
+        sx={{ mb: 3, maxWidth: 250, color: "text" }}
+        placeholder="Enter Robot Name"
+        value={searchTerm}
+        onChange={searchChange}
+      />
+    </div>
   );
 };
 

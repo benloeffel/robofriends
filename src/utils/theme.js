@@ -35,12 +35,12 @@ export default {
   buttons: {
     primary: {
       bg: "primary",
-      color: "text",
+      color: "background",
       fontWeight: "bold",
       transition: "all 0.25s",
       "&:hover": {
         bg: "secondary",
-        color: "text",
+        color: "background",
         transition: "all 0.25s"
       }
     },
@@ -61,6 +61,15 @@ export default {
       borderRadius: 4,
       boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
       textAlign: "center"
+    }
+  },
+  forms: {
+    label: {
+      color: "text",
+      fontFamily: "body",
+      fontWeight: "body",
+      lineHeight: "body",
+      fontSize: 1
     }
   },
   styles: {

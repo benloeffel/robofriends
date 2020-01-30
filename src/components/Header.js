@@ -1,12 +1,18 @@
-import { Styled, useColorMode } from "theme-ui";
-import PropTypes from "prop-types";
 /** @jsx jsx */
+import React, { memo } from "react"; // eslint-disable-line no-unused-vars
 import { jsx } from "theme-ui";
+import { Styled } from "theme-ui";
+import PropTypes from "prop-types";
 import SearchInput from "./SearchInput";
-import { Button } from "@theme-ui/components";
+import ButtonDarkMode from "./ButtonDarkMode";
 
 const Header = ({ searchTerms, searchChange }) => {
-  const [colorMode, setColorMode] = useColorMode();
+  const Heading = memo(() => (
+    <>
+      <Styled.h1>RoboFriends</Styled.h1>
+      <Styled.p>Search and instantly find your Robot Friends!</Styled.p>
+    </>
+  ));
 
   return (
     <header
@@ -18,17 +24,9 @@ const Header = ({ searchTerms, searchChange }) => {
         padding: 16
       }}
     >
-      <Styled.h1>RoboFriends</Styled.h1>
-      <Styled.p>Search and instantly find your Robot Friends!</Styled.p>
+      <Heading />
       <SearchInput searchTerm={searchTerms} searchChange={searchChange} />
-      <Button
-        sx={{ position: "absolute", right: "16px" }}
-        onClick={e => {
-          setColorMode(colorMode === "default" ? "dark" : "default");
-        }}
-      >
-        Lights {colorMode === "default" ? "OFF" : "ON"}!
-      </Button>
+      <ButtonDarkMode />
     </header>
   );
 };
