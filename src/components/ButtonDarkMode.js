@@ -11,10 +11,10 @@ const ButtonDarkMode = () => {
     <Button
       sx={{ position: "absolute", right: "16px" }}
       onClick={e => {
-        setColorMode(colorMode === "default" ? "dark" : "default");
+        setColorMode(colorMode === "dark" ? "default" : "dark");
       }}
     >
-      Lights {colorMode === "default" ? "OFF" : "ON"}!
+      Lights {colorMode === "dark" ? "ON" : "OFF"}!
     </Button>
   );
 };
