@@ -5,8 +5,8 @@ import { Box } from "@theme-ui/components";
 
 const StatusBar = ({ loading, error, resultLength }) => {
   return (
-    <Box sx={{ bg: "secondary", padding: "16px", textAlign: "center" }}>
-      <Styled.p>
+    <Box sx={{ bg: "text", padding: "16px", textAlign: "center" }}>
+      <Styled.p sx={{ color: "background" }}>
         {loading ? (
           <>
             Please wait while we're trying to load your data.
