@@ -63,6 +63,15 @@ export default {
       textAlign: "center"
     }
   },
+  forms: {
+    label: {
+      color: "text",
+      fontFamily: "body",
+      fontWeight: "body",
+      lineHeight: "body",
+      fontSize: 1
+    }
+  },
   styles: {
     root: {
       fontFamily: "body",
