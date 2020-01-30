@@ -35,12 +35,12 @@ export default {
   buttons: {
     primary: {
       bg: "primary",
-      color: "text",
+      color: "background",
       fontWeight: "bold",
       transition: "all 0.25s",
       "&:hover": {
         bg: "secondary",
-        color: "text",
+        color: "background",
         transition: "all 0.25s"
       }
     },
