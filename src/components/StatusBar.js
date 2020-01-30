@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import React from "react";
-import PropTypes from "prop-types";
+import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
 import { Box } from "@theme-ui/components";
+import PropTypes from "prop-types";
 
 const StatusBar = ({ loading, error, resultLength }) => {
   return (

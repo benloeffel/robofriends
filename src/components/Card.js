@@ -1,8 +1,9 @@
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
-import PropTypes from "prop-types";
 import { Styled } from "theme-ui";
 import { Card, Image } from "@theme-ui/components";
+import PropTypes from "prop-types";
 
 const CardComponent = ({ id, username, name, email }) => {
   return (

@@ -1,8 +1,8 @@
-import React, { memo } from "react";
-import PropTypes from "prop-types";
 /** @jsx jsx */
+import React, { memo } from "react";
 import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
+import PropTypes from "prop-types";
 import SearchInput from "./SearchInput";
 import ButtonDarkMode from "./ButtonDarkMode";
 
