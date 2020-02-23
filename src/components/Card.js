@@ -12,9 +12,15 @@ const CardComponent = ({ id, username, name, email }) => {
         src={`https://robohash.org/${id}?size=200x200`}
         alt={`Robot ${id}`}
       />
-      <Styled.h2 sx={{ color: "primary" }}>{name}</Styled.h2>
-      <Styled.p sx={{ color: "text" }}>{username}</Styled.p>
-      <Styled.p sx={{ color: "text" }}>{email}</Styled.p>
+      <Styled.h2 className="name" sx={{ color: "primary" }}>
+        {name}
+      </Styled.h2>
+      <Styled.p className="username" sx={{ color: "text" }}>
+        {username}
+      </Styled.p>
+      <Styled.p className="email" sx={{ color: "text" }}>
+        {email}
+      </Styled.p>
     </Card>
   );
 };

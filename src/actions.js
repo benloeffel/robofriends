@@ -1,3 +1,4 @@
+import { apiCall } from "./api/api";
 import {
   CHANGE_SEARCH_TERM,
   REQUEST_USERS_PENDING,
@@ -12,14 +13,13 @@ export const setSearchTerm = text => ({
 
 export const requestUsers = () => dispatch => {
   dispatch({ type: REQUEST_USERS_PENDING });
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then(response => {
-      return response.json();
-    })
+  return apiCall("http://jsonplaceholder.typicode.com/users")
     .then(data => {
       dispatch({ type: REQUEST_USERS_SUCCESS, payload: data });
     })
-    .catch(error => dispatch({ type: REQUEST_USERS_FAILED, payload: error }));
+    .catch(error => {
+      dispatch({ type: REQUEST_USERS_FAILED, payload: error });
+    });
 };
 
 /**

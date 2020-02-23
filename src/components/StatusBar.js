@@ -16,7 +16,7 @@ const StatusBar = ({ loading, error, resultLength }) => {
               ⏳
             </span>
           </>
-        ) : error ? (
+        ) : error.status ? (
           <>
             Oh no! We've encountered an error!
             <span role="img" aria-label="Screaming">
