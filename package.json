@@ -6,25 +6,26 @@
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@mdx-js/react": "^1.5.5",
-    "@testing-library/jest-dom": "^5.0.0",
+    "@testing-library/jest-dom": "^5.1.0",
     "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^8.0.3",
-    "@theme-ui/components": "^0.2.50",
+    "@testing-library/user-event": "^8.1.0",
+    "@theme-ui/components": "^0.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.3",
-    "react-scripts": "3.3.0",
+    "react-scripts": "3.3.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "theme-ui": "^0.2.52"
+    "theme-ui": "^0.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:c": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -45,6 +46,19 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "fetch-mock": "^9.0.0-beta.2",
+    "gh-pages": "^2.2.0",
+    "node-fetch": "^2.6.0",
+    "react-test-renderer": "^16.12.0",
+    "redux-mock-store": "^1.5.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/serviceWorker.js"
+    ]
   }
 }
