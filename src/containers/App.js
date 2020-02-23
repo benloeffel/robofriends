@@ -1,15 +1,7 @@
-import React, { useEffect } from "react";
-
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setSearchTerm, requestUsers } from "../actions";
-
-import { ThemeProvider } from "theme-ui";
-import theme from "../utils/theme";
-import Head from "../components/Head";
-import Header from "../components/Header";
-import CardList from "../components/CardList";
-import StatusBar from "../components/StatusBar";
-import ErrorBoundary from "../components/ErrorBoundary";
+import MainPage from "../components/MainPage";
 
 const mapStateToProps = state => {
   return {
@@ -27,36 +19,10 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-function App({
-  searchTerm,
-  users,
-  isLoading,
-  error,
-  onSearchChange,
-  onRequestUsers
-}) {
-  useEffect(() => {
-    onRequestUsers();
-  }, [onRequestUsers]);
-
-  const filteredUsers = users.filter(user => {
-    return user.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-
-  return (
-    <ErrorBoundary>
-      <ThemeProvider theme={theme}>
-        <Head />
-        <Header searchTerms={searchTerm} searchChange={onSearchChange} />
-        <StatusBar
-          loading={isLoading}
-          error={error}
-          resultLength={filteredUsers.length}
-        />
-        {filteredUsers.length > 0 ? <CardList users={filteredUsers} /> : null}
-      </ThemeProvider>
-    </ErrorBoundary>
-  );
+class App extends Component {
+  render() {
+    return <MainPage {...this.props} />;
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
