@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, combineReducers } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
-import { searchUsers, requestUsers } from "./reducers";
+import reducer from "./store/reducers";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
@@ -13,11 +13,7 @@ import { ThemeProvider } from "theme-ui";
 import theme from "./utils/theme";
 
 const logger = createLogger();
-const rootReducer = combineReducers({ searchUsers, requestUsers });
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
-);
+const store = createStore(reducer, applyMiddleware(thunkMiddleware, logger));
 
 ReactDOM.render(
   <Provider store={store}>
