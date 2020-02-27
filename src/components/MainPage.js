@@ -27,12 +27,13 @@ const MainPage = ({
     <div>
       <Head />
       <Header searchTerms={searchTerm} searchChange={onSearchChange} />
+      {console.log()}
       <StatusBar
         loading={isLoading}
         error={error}
-        resultLength={filterUsers.length}
+        resultLength={filterUsers(users).length}
       />
-      {filterUsers.length > 0 ? <CardList users={filterUsers(users)} /> : null}
+      {filterUsers ? <CardList users={filterUsers(users)} /> : null}
     </div>
   );
 };

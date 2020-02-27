@@ -24,8 +24,9 @@ export const loadUsersSuccess = (users: User[]): LoadUsersSuccess => ({
   payload: users
 });
 
-export const loadUsersError = (): LoadUsersError => ({
-  type: "REQUEST_USERS_FAILED"
+export const loadUsersError = (error: Error): LoadUsersError => ({
+  type: "REQUEST_USERS_FAILED",
+  payload: error
 });
 
 /**

@@ -16,9 +16,9 @@ const StatusBar = ({ loading, error, resultLength }) => {
               ⏳
             </span>
           </>
-        ) : error.status ? (
+        ) : error.name ? (
           <>
-            Oh no! We've encountered an error!
+            Oh no we've encountered {error.name}: {error.message}
             <span role="img" aria-label="Screaming">
               😱
             </span>
@@ -45,7 +45,7 @@ const StatusBar = ({ loading, error, resultLength }) => {
 
 StatusBar.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.object.isRequired,
   resultLength: PropTypes.number.isRequired
 };
 

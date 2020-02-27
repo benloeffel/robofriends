@@ -13,6 +13,6 @@ export const loadUsers = (): Effect => (dispatch, getState) => {
 
     return request
       .then(response => dispatch(loadUsersSuccess(response)))
-      .catch(error => dispatch(loadUsersError()));
+      .catch(error => dispatch(loadUsersError(error)));
   };
 };

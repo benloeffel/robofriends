@@ -28,13 +28,14 @@ export interface LoadUsersSuccess extends Action {
 
 export interface LoadUsersError extends Action {
   type: "REQUEST_USERS_FAILED";
+  payload: Error;
 }
 
 export interface ApplicationState {
   searchTerm: string;
   loading: boolean;
   users: User[];
-  error: boolean;
+  error: Error;
 }
 
 export type ApplicationAction =
