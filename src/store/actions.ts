@@ -1,5 +1,5 @@
 /**
- * Our actions file simply does one job, to map our action types to runtime javascript.
+ * The actions file simply does one job, to map our action types to runtime javascript.
  */
 
 import {
@@ -25,8 +25,7 @@ export const loadUsersSuccess = (users: User[]): LoadUsersSuccess => ({
 });
 
 export const loadUsersError = (): LoadUsersError => ({
-  type: "REQUEST_USERS_FAILED",
-  payload: new Error()
+  type: "REQUEST_USERS_FAILED"
 });
 
 /**

@@ -4,10 +4,7 @@ export const initialState: ApplicationState = {
   searchTerm: "",
   loading: false,
   users: [],
-  error: {
-    name: "",
-    message: ""
-  }
+  error: false
 };
 
 const reducer = (state = initialState, action: ApplicationAction) => {
@@ -25,7 +22,7 @@ const reducer = (state = initialState, action: ApplicationAction) => {
       });
     case "REQUEST_USERS_FAILED":
       return Object.assign({}, state, {
-        error: action.payload,
+        error: true,
         isLoading: false
       });
     default:

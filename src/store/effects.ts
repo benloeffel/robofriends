@@ -3,13 +3,16 @@ import { ApplicationState, ApplicationAction } from "./types";
 import { loadUsersRequest, loadUsersSuccess, loadUsersError } from "./actions";
 import { apiCall } from "../api/api";
 
-type Effect = ThunkAction<any, ApplicationState, any, ApplicationAction>;
+type Effect = ThunkAction<void, ApplicationState, void, ApplicationAction>;
 
 export const loadUsers = (): Effect => (dispatch, getState) => {
-  dispatch(loadUsersRequest());
-  return apiCall("http://jsonplaceholder.typicode.com/users")
-    .then(data => {
-      dispatch(loadUsersSuccess(data));
-    })
-    .catch(() => loadUsersError());
+  return () => {
+    dispatch(loadUsersRequest());
+
+    const request = apiCall("http://jsonplaceholder.typicode.com/users");
+
+    return request
+      .then(response => dispatch(loadUsersSuccess(response)))
+      .catch(error => dispatch(loadUsersError()));
+  };
 };

@@ -12,13 +12,6 @@ export interface User {
   email: string;
 }
 
-export interface ApplicationState {
-  searchTerm: string;
-  loading: boolean;
-  users: User[];
-  error: Error;
-}
-
 export interface SearchUsers extends Action {
   type: "CHANGE_SEARCH_TERM";
   payload: Text;
@@ -35,7 +28,13 @@ export interface LoadUsersSuccess extends Action {
 
 export interface LoadUsersError extends Action {
   type: "REQUEST_USERS_FAILED";
-  payload: Error;
+}
+
+export interface ApplicationState {
+  searchTerm: string;
+  loading: boolean;
+  users: User[];
+  error: boolean;
 }
 
 export type ApplicationAction =

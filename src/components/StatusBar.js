@@ -45,7 +45,7 @@ const StatusBar = ({ loading, error, resultLength }) => {
 
 StatusBar.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.object.isRequired,
+  error: PropTypes.bool.isRequired,
   resultLength: PropTypes.number.isRequired
 };
 
