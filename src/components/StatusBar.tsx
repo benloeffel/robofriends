@@ -3,7 +3,13 @@ import React from "react"; // eslint-disable-line no-unused-vars
 import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
 import { Box } from "@theme-ui/components";
-import PropTypes, { InferProps } from "prop-types";
+import PropTypes from "prop-types";
+
+type Props = {
+  loading: boolean;
+  error: Error;
+  resultLength: number;
+};
 
 const StatusBar: React.FC<Props> = ({ loading, error, resultLength }) => {
   return (
@@ -43,27 +49,10 @@ const StatusBar: React.FC<Props> = ({ loading, error, resultLength }) => {
   );
 };
 
-const userPropTypes = {
+StatusBar.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.shape({
-    name: PropTypes.string,
-    message: PropTypes.string
-  }).isRequired,
+  error: PropTypes.any.isRequired,
   resultLength: PropTypes.number.isRequired
 };
-
-const userDefaultProps = {};
-
-type InferPropTypes<
-  PropTypes,
-  DefaultProps = {},
-  Props = InferProps<PropTypes>
-> = {
-  [Key in keyof Props]: Key extends keyof DefaultProps
-    ? Props[Key] | DefaultProps[Key]
-    : Props[Key];
-};
-
-type Props = InferPropTypes<typeof userPropTypes, typeof userDefaultProps>;
 
 export default StatusBar;
