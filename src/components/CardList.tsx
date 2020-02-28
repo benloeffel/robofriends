@@ -1,9 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Grid } from "@theme-ui/components";
-import Card from "../components/Card";
+import Card from "./Card";
+import { User } from "../store/types";
 
-const CardList = ({ users }) => {
+type Props = {
+  users: Array<User>;
+};
+
+const CardList: React.FC<Props> = ({ users }) => {
   return (
     <>
       <Grid
@@ -14,7 +19,7 @@ const CardList = ({ users }) => {
           padding: 16
         }}
       >
-        {users.map((user, idx) => (
+        {users.map((user: User, idx: number) => (
           <Card
             key={idx}
             id={user.id}
