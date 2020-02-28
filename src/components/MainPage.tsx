@@ -9,7 +9,7 @@ import { User } from "../store/types";
 
 type Props = {
   searchTerm: string;
-  users: Array<object>;
+  users: Array<User>;
   isLoading: boolean;
   error: Error;
   onSearchChange: () => void;
@@ -28,7 +28,7 @@ const MainPage: React.FC<Props> = ({
     onRequestUsers();
   }, [onRequestUsers]);
 
-  const filterUsers = (users: any) => {
+  const filterUsers = (users: Array<User>) => {
     return users.filter((user: User) => {
       return user.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
