@@ -1,11 +1,22 @@
 import React, { useEffect } from "react";
 
-import Head from "../components/Head";
-import Header from "../components/Header";
-import CardList from "../components/CardList";
-import StatusBar from "../components/StatusBar";
+import Head from "./Head";
+import Header from "./Header";
+import CardList from "./CardList";
+import StatusBar from "./StatusBar";
 
-const MainPage = ({
+import { User } from "../store/types";
+
+type Props = {
+  searchTerm: string;
+  users: Array<object>;
+  isLoading: boolean;
+  error: object;
+  onSearchChange: () => void;
+  onRequestUsers: () => void;
+};
+
+const MainPage: React.FC<Props> = ({
   searchTerm,
   users,
   isLoading,
@@ -17,8 +28,8 @@ const MainPage = ({
     onRequestUsers();
   }, [onRequestUsers]);
 
-  const filterUsers = users => {
-    return users.filter(user => {
+  const filterUsers = (users: any) => {
+    return users.filter((user: User) => {
       return user.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
   };
@@ -27,7 +38,6 @@ const MainPage = ({
     <div>
       <Head />
       <Header searchTerms={searchTerm} searchChange={onSearchChange} />
-      {console.log()}
       <StatusBar
         loading={isLoading}
         error={error}
