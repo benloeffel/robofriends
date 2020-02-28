@@ -1,11 +1,18 @@
 /** @jsx jsx */
-import React from "react"; // eslint-disable-line no-unused-vars
+import React from "react";
 import { jsx } from "theme-ui";
 import { Styled } from "theme-ui";
 import { Card, Image } from "@theme-ui/components";
 import PropTypes from "prop-types";
 
-const CardComponent = ({ id, username, name, email }) => {
+type Props = {
+  id: number;
+  username: string;
+  name: string;
+  email: string;
+};
+
+const CardComponent: React.FC<Props> = ({ id, username, name, email }) => {
   return (
     <Card sx={{ bg: "background", border: "2px solid black" }}>
       <Image
