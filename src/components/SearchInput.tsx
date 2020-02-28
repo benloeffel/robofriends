@@ -4,7 +4,12 @@ import { jsx } from "theme-ui";
 import { Label, Input } from "@theme-ui/components";
 import PropTypes from "prop-types";
 
-const SearchInput = ({ searchTerm, searchChange }) => {
+type Props = {
+  searchTerm: string;
+  searchChange: () => void;
+};
+
+const SearchInput: React.FC<Props> = ({ searchTerm, searchChange }) => {
   return (
     <div>
       <Label htmlFor="search">Search Robots</Label>
