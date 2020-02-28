@@ -11,7 +11,7 @@ type Props = {
   searchTerm: string;
   users: Array<object>;
   isLoading: boolean;
-  error: object;
+  error: Error;
   onSearchChange: () => void;
   onRequestUsers: () => void;
 };
