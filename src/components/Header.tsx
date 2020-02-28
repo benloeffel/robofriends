@@ -1,17 +1,21 @@
 /** @jsx jsx */
 import React, { memo } from "react"; // eslint-disable-line no-unused-vars
-import { jsx } from "theme-ui";
-import { Styled } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import PropTypes from "prop-types";
 import SearchInput from "./SearchInput";
 import ButtonDarkMode from "./ButtonDarkMode";
 
-const Header = ({ searchTerms, searchChange }) => {
+type Props = {
+  searchTerms: string;
+  searchChange: () => void;
+};
+
+const Header: React.FC<Props> = ({ searchTerms, searchChange }) => {
   const Heading = memo(() => (
-    <>
+    <React.Fragment>
       <Styled.h1>RoboFriends</Styled.h1>
       <Styled.p>Search and instantly find your Robot Friends!</Styled.p>
-    </>
+    </React.Fragment>
   ));
 
   return (
