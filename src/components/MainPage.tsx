@@ -12,7 +12,7 @@ type Props = {
   users: Array<User>;
   isLoading: boolean;
   error: Error;
-  onSearchChange: () => void;
+  onSearchChange(event: React.SyntheticEvent<HTMLInputElement>): void;
   onRequestUsers: () => void;
 };
 

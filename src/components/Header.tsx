@@ -7,7 +7,7 @@ import ButtonDarkMode from "./ButtonDarkMode";
 
 type Props = {
   searchTerms: string;
-  searchChange: () => void;
+  searchChange(event: React.SyntheticEvent<HTMLInputElement>): void;
 };
 
 const Header: React.FC<Props> = ({ searchTerms, searchChange }) => {

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-type Props = {};
+type Props = {
+  children?: JSX.Element;
+};
 
 type State = {
   hasError: boolean;

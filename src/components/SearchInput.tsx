@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 type Props = {
   searchTerm: string;
-  searchChange: () => void;
+  searchChange(event: React.SyntheticEvent<HTMLInputElement>): void;
 };
 
 const SearchInput: React.FC<Props> = ({ searchTerm, searchChange }) => {
