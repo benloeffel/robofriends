@@ -10,7 +10,7 @@ export const initialState: ApplicationState = {
   }
 };
 
-const reducer = (state = initialState, action: ApplicationAction) => {
+export const reducer = (state = initialState, action: ApplicationAction) => {
   switch (action.type) {
     case "CHANGE_SEARCH_TERM":
       return Object.assign({}, state, {
@@ -32,8 +32,6 @@ const reducer = (state = initialState, action: ApplicationAction) => {
       return state;
   }
 };
-
-export default reducer;
 
 // /**
 //  * For more information on Reducers visit the link below:
