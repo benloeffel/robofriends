@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusBar renders the StatusBar component 1`] = `ShallowWrapper {}`;
+
+exports[`StatusBar renders the error message when 'error' prop is true 1`] = `ShallowWrapper {}`;
+
+exports[`StatusBar renders the error message when 'error' prop is true 2`] = `ShallowWrapper {}`;
+
+exports[`StatusBar renders the loading message when 'loading' prop is true 1`] = `ShallowWrapper {}`;

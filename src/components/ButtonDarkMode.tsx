@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import React from "react"; // eslint-disable-line no-unused-vars
+import React from "react";
 import { jsx } from "theme-ui";
 import { useColorMode } from "theme-ui";
 import { Button } from "@theme-ui/components";
 
-const ButtonDarkMode = () => {
+const ButtonDarkMode: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
