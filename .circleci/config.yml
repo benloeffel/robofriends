@@ -1,12 +1,17 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-workflows:
+jobs:
   bobby:
     steps:
       - checkout
-      - run: echo "A first build"
+      - run: echo "First Build"
   sally:
     steps:
       - checkout
-      - run: echo "A second build"
+      - run: echo "Second Build"
+workflows:
+  bobby_sally:
+    jobs:
+      - bobby
+      - sally
