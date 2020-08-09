@@ -2,7 +2,11 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 workflows:
-  node-tests:
-    jobs:
-      - node/test
-      - run: echo "Test Completed"
+  bobby:
+    steps:
+      - checkout
+      - run: echo "A first build"
+  sally:
+    steps:
+      - checkout
+      - run: echo "A second build"
