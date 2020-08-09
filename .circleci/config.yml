@@ -1,17 +1,20 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
 jobs:
-  bobby:
+  build:
+    docker:
+      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: echo "First Build"
-  sally:
+      - checkout # check out the code in the project directory
+      - run: echo "build" # run the `echo` command
+  build:
+    docker:
+      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: echo "Second Build"
+      - checkout # check out the code in the project directory
+      - run: echo "test" # run the `echo` command
 workflows:
-  bobby_sally:
+  version: 2
+  build_and_test:
     jobs:
-      - bobby
-      - sally
+      - build
+      - test
